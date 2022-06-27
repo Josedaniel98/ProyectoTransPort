@@ -1,6 +1,6 @@
 amqp==2.5.2
 #anyjson==0.3.3
-billiard==3.6.1.0
+billiard==3.3.0.23
 blessings==1.7
 bpython==0.18
 #celery==3.1.26.post2
