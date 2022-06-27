@@ -45,7 +45,7 @@ webpackConfig.devServer = {
     changeOrigin: true,
   },{
     path: '/static',
-    target: 'http://joseda98.pythonanywhere.com/',
+    target: 'http://localhost:8080/',
     secure: false,
     changeOrigin: true,
   },{
