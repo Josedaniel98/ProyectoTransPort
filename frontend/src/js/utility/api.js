@@ -19,7 +19,7 @@ function getToken() {
  * @return: string: string con la url absoluta para la peticion
  * */
 export function makeUrl(path, params = {}) {
-    let url = '/api';
+    let url = 'http://joseda98.pythonanywhere.com/api';
     if (path[0] === '/') {
         url += `${path}/`;
     } else {
