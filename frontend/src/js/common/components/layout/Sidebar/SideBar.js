@@ -7,7 +7,7 @@ class SideBar extends Component {
     }
 
     render() {
-        const { toggleOpen, navToggle, logOut } = this.props;
+        const { toggleOpen, navToggle, logOut, permisos } = this.props;
         return (
             <aside className={`main-sidebar px-0 col-12 col-md-3 col-lg-2 ${toggleOpen ? '' : 'open'}`}>
                 <div className="main-navbar">
@@ -37,85 +37,78 @@ class SideBar extends Component {
                                 <span>Home</span>
                             </NavLink>
                         </li>
-                        <li className="nav-item">
+                        {
+                        permisos.admin &&
+                        (<li className="nav-item">
                             <NavLink to="/usuarios" className="nav-link" activeClassName={'active'}>
                                 <div className="d-inline-block item-icon-wrapper">
                                     <i className="material-icons">vertical_split</i>
                                 </div>
                                 <span>Usuarios</span>
                             </NavLink>
-                        </li>
-                        <li className="nav-item">
+                        </li>)}
+                        {
+                        permisos.admin &&
+                        (<li className="nav-item">
                             <NavLink to="/producto" className="nav-link" activeClassName={'active'}>
                                 <div className="d-inline-block item-icon-wrapper">
                                     <i className="material-icons">vertical_split</i>
                                 </div>
                                 <span>Productos</span>
                             </NavLink>
-                        </li>
-                        <li className="nav-item">
+                        </li>)}
+                        {
+                        permisos.admin &&
+                        (<li className="nav-item">
                             <NavLink to="/sucursal" className="nav-link" activeClassName={'active'}>
                                 <div className="d-inline-block item-icon-wrapper">
                                     <i className="material-icons">vertical_split</i>
                                 </div>
                                 <span>Sucursales</span>
                             </NavLink>
-                        </li>
+                        </li>)}
 
-                        <li className="nav-item">
-                            {/* <AccordionItem>
-                                <AccordionItemHeading>
-                                    <AccordionItemButton>
-                                        <AccordionItemState>
-                                            <span>Planta de Extracción</span>
-                                        </AccordionItemState>
-                                    </AccordionItemButton>
-                                </AccordionItemHeading>
-                                <AccordionItemState>
-                                    <AccordionItemPanel>
-                                        <div className="sub-nav-item">
-                                            <NavLink exact to="/plantaextraccion" activeClassName={"submenu-select"}>
-                                                <div className="d-inline-block item-icon-wrapper">
-                                                    <span className={"t-blanco"}>Inventario</span>
-                                                </div>
-                                            </NavLink>
-                                        </div>
-                                    </AccordionItemPanel>
-                                </AccordionItemState>
-                            </AccordionItem> */}
-
+                        {
+                        permisos.planta_extraccion &&
+                        (<li className="nav-item">
                             <NavLink to="/plantaextraccion" className="nav-link" activeClassName={'active'}>
                                 <div className="d-inline-block item-icon-wrapper">
                                     <i className="material-icons">vertical_split</i>
                                 </div>
                                 <span>PE-Inventario</span>
                             </NavLink>
-                        </li>
+                        </li>)}
 
-                        <li className="nav-item">
+                        {
+                        permisos.planta_extraccion &&
+                        (<li className="nav-item">
                             <NavLink to="/pe-movimiento" className="nav-link" activeClassName={'active'}>
                                 <div className="d-inline-block item-icon-wrapper">
                                     <i className="material-icons">vertical_split</i>
                                 </div>
                                 <span>PE-Movimiento</span>
                             </NavLink>
-                        </li>
-                        <li className="nav-item">
+                        </li>)}
+                        {
+                        permisos.cliente &&
+                        (<li className="nav-item">
                             <NavLink to="/pe-cliente" className="nav-link" activeClassName={'active'}>
                                 <div className="d-inline-block item-icon-wrapper">
                                     <i className="material-icons">vertical_split</i>
                                 </div>
                                 <span>PE-Cliente</span>
                             </NavLink>
-                        </li>
-                        <li className="nav-item">
+                        </li>)}
+                        {
+                        permisos.admin &&
+                        (<li className="nav-item">
                             <NavLink to="/roles" className="nav-link" activeClassName={'active'}>
                                 <div className="d-inline-block item-icon-wrapper">
                                     <i className="material-icons">vertical_split</i>
                                 </div>
                                 <span>Roles</span>
                             </NavLink>
-                        </li>
+                        </li>)}
                         <li className="nav-item">
                             <Link to="/login" onClick={logOut} className="nav-link">
                                 <div className="d-inline-block item-icon-wrapper">
