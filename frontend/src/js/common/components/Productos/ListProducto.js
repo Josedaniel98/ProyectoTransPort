@@ -16,7 +16,7 @@ export default class ListProducto extends Component {
         return (
             <React.Fragment>
                 <br />
-                <h3 className="text">Productos</h3>
+                <h3 className="text">Mantenimiento de Productos</h3>
                 <div className="mb-4 card card-small mt-4 container">
                     <div className="mt-3 d-flex justify-content-end mb-3">
                         <Link
